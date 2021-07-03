@@ -1,0 +1,53 @@
+{
+  "name": "postGaetor",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "start": "node .",
+    "posttest": "npm run lint",
+    "lint": "npm run lint:server",
+    "prettier": "prettier --single-quote --trailing-comma es5 --print-width 120 --write .",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.10.0",
+    "loopback-boot": "^2.6.5",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^4.0.0",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run prettier",
+      "git add"
+    ],
+    ".eslintrc": [
+      "npm run prettier -- --parser json",
+      "git add"
+    ],
+    "*.json": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "postGaetor"
+}
